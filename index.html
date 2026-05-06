@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ekstrakurikuler SMAN 3 Tambun Selatan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Ekstrakurikuler SMAN 3 Tambun Selatan</h1>
+  <p>Informasi Kegiatan, Pengurus, dan Kontak</p>
+</header>
+
+<nav>
+  <a href="#pmr">PMR</a>
+  <a href="#paskibra">Paskibra</a>
+  <a href="#pramuka">Pramuka</a>
+  <a href="#irma">Irma</a>
+</nav>
+
+<div class="container" id="content"></div>
+
+<footer>
+  <p>&copy; 2026 SMAN 3 Tambun Selatan</p>
+</footer>
+
+<script>
+  const components = [
+    "components/pmr.html",
+    "components/paskibra.html",
+    "components/pramuka.html",
+    "components/irma.html"
+  ];
+
+  const container = document.getElementById("content");
+
+  components.forEach(file => {
+    fetch(file)
+      .then(res => res.text())
+      .then(data => {
+        container.innerHTML += data;
+      });
+  });
+</script>
+
+</body>
+</html>
